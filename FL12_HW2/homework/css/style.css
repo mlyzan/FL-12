@@ -1,4 +1,10 @@
 @media print {
+    @page{
+        margin: 1cm;
+    }
+    .container{
+        background-color: #fff;
+    }
     .tm-content-box ol li:nth-child(odd){
         margin-right: 200px;
         text-align: right;
@@ -7,7 +13,8 @@
         margin-left: 150px;
         text-align: left;
     }
-    nav, #about, #contact, .tm-team-img, .gallery-container, .carousel-indicators, .img-fluid, section:before, .heading li:nth-child(1)::after, .heading li:nth-child(3)::after{
+    nav, #about, #contact, .tm-team-img, .gallery-container, .carousel-indicators, .img-fluid, section:before,
+    .heading li:nth-child(1)::after, .heading li:nth-child(3)::after{
         display: none;
     }
     .tm-section-title, .tm-content-box h2{
@@ -32,7 +39,7 @@
         margin: 0;
     }
     .padding-medium{
-        margin-top: 8px;
+        margin-top: 15px;
     }
 }
 .tm-content-box .tm-team-description-container .tm-section-title:first-child, .tm-content-box .padding-medium h2, section p.carousel-description{
@@ -73,13 +80,12 @@ section:before{
         border-top: 50px solid lightskyblue; 
         border-right: 50px solid transparent;
 }
-.tm-content-box .padding-medium ol {
+.padding-medium ol {
     list-style: lower-alpha;
 }
-.heading .padding-medium ol li:hover:before{
+.padding-medium ol li:hover:before{
     content: '>';
     font-weight: bold;
-    color:#000;
 }
 .heading li:nth-child(1)::after, .heading li:nth-child(3)::after{
     content: "New";
@@ -106,7 +112,7 @@ section:before{
 .tm-section-description{
     text-align: left;
     line-height: 30px;
-    text-indent: 25px;
+    text-indent: 1.5em;
 }
 #contact .tm-section-title, p.tm-section-description{
     text-align: left;
