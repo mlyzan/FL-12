@@ -16,6 +16,9 @@ $fonts: ("Source": 'Source Sans Pro',  "Hind": 'Hind', "Fresca": 'Fresca' );
     font-size: 16px;
     border: none;
     border-radius: 4px;
+    &:hover{
+        cursor:pointer;
+    }
 }
 @mixin link(){
     text-align: center;
