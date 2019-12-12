@@ -6,7 +6,6 @@
 body{
     background-color: $section_bg;
 }
-$font-weights: ("regular": 400, "medium": 500, "bold": 700);
 $fonts: ("Source": 'Source Sans Pro',  "Hind": 'Hind', "Fresca": 'Fresca' );
 @mixin btn() {
     background-color: $btn;
