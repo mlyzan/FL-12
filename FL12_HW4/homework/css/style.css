@@ -30,7 +30,7 @@
     text-decoration: none;
     padding: 0 26px;
 }
-.active{
+.header_link:hover{
     color: #bfba55;
 }
 .header_block{
