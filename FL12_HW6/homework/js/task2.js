@@ -1,6 +1,6 @@
-let a = +prompt('Number A:','');
-let b = +prompt('Number B:','');
-let c = +prompt('Number C:','');
+let a = parseInt(prompt('Number A:',''));
+let b = parseInt(prompt('Number B:',''));
+let c = parseInt(prompt('Number C:',''));
     if(isNaN(a) || isNaN(b) || isNaN(c) ){
         alert(`input values should be ONLY numbers`);
     }else if(a===0||b===0||c===0){

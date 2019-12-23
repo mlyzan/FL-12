@@ -1,6 +1,6 @@
-let a = parseInt(prompt('Number A:',''));
-let b = parseInt(prompt('Number B:',''));
-let c = parseInt(prompt('Number C:',''));
+let a = parseFloat(prompt('Number A:',''));
+let b = parseFloat(prompt('Number B:',''));
+let c = parseFloat(prompt('Number C:',''));
 let n2 = 2;
 let n4 = 4;
 let result, x1, x2;
