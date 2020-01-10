@@ -52,7 +52,7 @@ console.log(filterArray([2, 5, 8], function(el) {
 function flipOver(str){
     let newStr = '';
     for (let i = str.length - 1; i >= 0; i--) {
-        newStr += str.charAt(i);
+        newStr += str[i];
     }
     return newStr;
 }
