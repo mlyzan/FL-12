@@ -26,7 +26,7 @@ executeforEach([1,2,3], function(el) {
 function mapArray(arg,callBack){
     let arr= [];
     for(let i =0; i< arg.length; i++){
-        arr.push(callBack(+arg[i]))
+        arr.push(callBack(parseInt(arg[i])))
     }
     return arr
 }
