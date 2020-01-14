@@ -100,10 +100,9 @@ console.log(substitute([58, 14, 48, 2, 31, 29]))
 // function getPastDay
 const date = new Date(2019, 0, 2);
 function getPastDay(date, d){
-    let name = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    let newDay = date.getDate()-d;
+    const newDay = date.getDate()-d;
     let newDate = new Date(date.getFullYear(), date.getMonth(), newDay);
-        return `${newDate.getDate()}, (${newDate.getDate()} ${name[newDate.getMonth()]} ${newDate.getFullYear()})`
+        return newDate.getDate()
 }
 console.log(getPastDay(date, 365))
 
