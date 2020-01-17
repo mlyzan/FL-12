@@ -30,8 +30,8 @@ class Fighter {
     }
     
     attack(fighter){
-        let probability = 100-(fighter.getStrength() + fighter.getAgility());
-        let rand = Math.round(Math.random()*100);
+        const probability = 100-(fighter.getStrength() + fighter.getAgility());
+        const rand = Math.round(Math.random()*100);
         if(rand<=probability){
             fighter.dealDamage(this._damage)
             console.log(`${this._name} makes ${this._damage} damage to ${fighter.getName()}`)
@@ -92,6 +92,6 @@ function battle(firstFighter, secondFighter){
     }
 }
 
-const fighter1 = new Fighter({name: 'Maximus', damage: 20, strength: 20, agility: 20, hp:100 });
+const fighter1 = new Fighter({name: 'Maximus', damage: 20, strength: 20, agility: 20, hp: 100 });
 const fighter2 = new Fighter({name: 'Commodus', damage: 25, strength: 25, agility: 20, hp: 90});
 battle(fighter1, fighter2)
