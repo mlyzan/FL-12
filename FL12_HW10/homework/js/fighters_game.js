@@ -1,6 +1,7 @@
 function Fighter({name, damage, hp, strength, agility}){
     let Wins = 0,
         Losses = 0;
+    const MAX_HP = hp;
     return {
         getName: function(){
             return name
@@ -31,10 +32,7 @@ function Fighter({name, damage, hp, strength, agility}){
             console.log(`Name: ${name} Wins: ${Wins} Losses: ${Losses}`)
         },
         heal: function(addHp){
-            hp += addHp;
-            if(hp > 100){
-                hp = 100;
-            }
+            MAX_HP < hp+addHp ? hp = MAX_HP : hp += addHp;
         },
         dealDamage: function(damage){
             hp -= damage;
