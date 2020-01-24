@@ -1,0 +1,25 @@
+/* Todo: your styles go here*/
+.close{
+    color: #e6d40e;
+}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+.empty_show{
+    font-style: italic;
+    cursor: text;
+    display: block;
+}
+.file{
+    color: #BBBBBB;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+#root div:hover{
+    background-color:rgb(231, 230, 230);
+}
