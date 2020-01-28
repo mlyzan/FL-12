@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    position: relative;
+    height: 60px;
+    background-color: #32333E;
+}
+h1{
+    text-align: center;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 60px;
+}
+h2{
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+.add_btn, .edit, .remove, .cancel, .save , .go_back, .done_btn{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 10px;
+    background-color: #3B5278;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+}
+.add_btn:hover, .edit:hover, .remove:hover, .cancel:hover, .save:hover, .go_back:hover, .done_btn:hover{
+    opacity: .8;
+    cursor: pointer;
+}
+.parent{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #3B5278; 
+    border-radius: 8px;
+    padding: 15px 15px 78px 15px;
+}
+.term, .def{
+    overflow: auto;
+    width: 220px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #3B5278;
+}
+.edit, .cancel{
+    top: 65px;
+    left: 30px;
+}
+.remove, .save{
+    top: 65px;
+    right: 30px;
+}
+.done_btn{
+    top: 65px;
+    right: 285px;
+}
+input{
+    border: none;
+    border-bottom: 1px solid #3B5278;
+}
+.done{
+    background-color: tomato;
+}
+.error{
+    border: 1px solid tomato;
+}
