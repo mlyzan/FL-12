@@ -58,9 +58,8 @@ console.log(hideNumber(phoneNumber))
 // 7 task
 const required = () => { throw new Error('Missing property'); };
 function add (...num) {
-    console.log(num)
     if(num.length>1){
-        return num.reduce((mem, n) => mem + n, 0);
+        return num.reduce((mem, n) => mem + n);
     }else {
         return required()
     }
