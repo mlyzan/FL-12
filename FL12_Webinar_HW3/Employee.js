@@ -81,10 +81,6 @@ class HRManager extends Manager {
     }
 }
 
-function ManagerPro(target, source) {
-    Object.assign(target, source)
-}
-
 const salesManager = new SalesManager ({
     id: 1,
     firstName: 'John',
@@ -120,3 +116,15 @@ const blueCollarWorkerOne = new BlueCollarWorker ({
     position: 'office worker',
     departmen: 'sales'
 });
+
+//task 3
+const promoter = {
+    promote (id, salary) {
+        let worker = Employee.EMPLOYEES.find(e => e.id === id);
+        worker.getPromoted({salary})
+    }
+};
+
+function ManagerPro (target, source) {
+    return Object.assign(target, source)
+};
