@@ -19,7 +19,7 @@ console.log(array2 === copiedAraay)
 function addUniquedId (obj) {
     return {
         ...obj,
-        id: Symbol(obj.name)
+        id: Symbol(Math.random().toString(16).slice(2)).description
     }
 }
 console.log(addUniquedId({name: 123}))
@@ -41,7 +41,7 @@ console.log(regroupObject(oldObj))
 
 // 5 task 
 function findUniqueElements (arr) {
-    return [...new Set(arr.map(x => x))] 
+    return [...new Set(arr)] 
 }
 const array5 = [1, 1, 23, 3, 4, 5, 6, 5, 4, 23, 2, 1, 1, 1, 1, 1];
 console.log(findUniqueElements(array5))
