@@ -18,7 +18,7 @@ addEventListener('DOMContentLoaded', () =>{
             .then(response => response.json())
             .then(json => {
                 renderUsers(json)
-            })
+            }).catch(() => console.log('Oooops! Somethig wrong'))
     }());
 
     function renderUsers (arr) {
@@ -85,28 +85,31 @@ addEventListener('DOMContentLoaded', () =>{
 
     }
     function close (parent) {
-        let inputValue = parent.querySelectorAll('input');
-            inputValue.forEach(e => {
+        let input = parent.querySelectorAll('input');
+            input[0].classList.add('name');
+            input.forEach(e => {
                 let span = document.createElement('span');
                     span.classList.add('value');
                     span.innerText = e.value;
                     e.parentNode.replaceChild(span, e);
-                    if(span.parentNode.querySelectorAll('span').length === 1) {
-                        span.parentNode.querySelector('span').classList.add('name');
+                    if(e.className === 'name') {
+                        span.classList.add('name');
                     }
 
             });
             parent.querySelector('.icon_edit').style.display ='inline';
             parent.querySelector('.icon_close').style.display = 'none';
             parent.querySelector('.icon_save').style.display = 'none';
-    }
+    };
+
     function spinner (parent) {
         parent.querySelectorAll('div').forEach(e => e.remove());
         let imgSpinner = document.createElement('img');
             imgSpinner.classList.add('spinner');
             imgSpinner.src = './svg/oval.svg';
             parent.querySelector('.photo').after(imgSpinner);
-    }
+    };
+
     function save (parent, id) { 
         let inputs = parent.querySelectorAll('input');
         let newDate = {
@@ -117,14 +120,14 @@ addEventListener('DOMContentLoaded', () =>{
             phone: inputs[4].value,
             website: inputs[5].value
         };
-        spinner(parent) 
-        fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify(newDate),
-            headers: {
-            "Content-type": "application/json; charset=UTF-8"
-            }
-        })
+        spinner(parent);
+            fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify(newDate),
+                headers: {
+                "Content-type": "application/json; charset=UTF-8"
+                }
+            })
             .then(response => response.json())
             .then(json => {
                 let div = parent.querySelectorAll('div');
@@ -136,37 +139,35 @@ addEventListener('DOMContentLoaded', () =>{
                 parent.querySelector('.icon_close').style.display = 'none';
                 parent.querySelector('.icon_edit').style.display = 'inline';
                 parent.querySelector('.spinner').style.display = 'none';
-            }).catch(() => 'Oooops! Somethig wrong')
-    }
+            }).catch(() => console.log('Oooops! Somethig wrong'))
+    };
 
     function update (props) {
-        let span = document.createElement('span');
-        let output = `
-            <div><span class="value name">${props.name}</span></div>
-            <div>
-                <span class="key">id: </span>
-                <span class="value">${props.id}</span>
-            </div>
-            <div>
-                <span class="key">username: </span>
-                <span class="value">${props.username}</span>
-            </div>
-            <div>
-                <span class="key">email: </span>
-                <span class="value">${props.email}</span>
-            </div>
-            <div>
-                <span class="key">phone: </span>
-                <span class="value">${props.phone}</span>
-            </div>
-            <div>
-                <span class="key">website: </span>
-                <span class="value">${props.website}</span>
-            </div>
-        `;
-            span.innerHTML = output;;
-            return span
-    }
+        let div = document.createElement('div');
+            Object.entries(props).forEach(e => {
+                if(e[0] === 'name') {
+                    let span = document.createElement('span');
+                        span.classList.add('value');
+                        span.classList.add('name');
+                        span.innerText = `${e[1]}`;
+                        div.append(span)
+                    let br = document.createElement('br');
+                        div.append(br)
+                }else {
+                    let span = document.createElement('span');
+                        span.classList.add('key');
+                        span.innerText = `${e[0]}: `;
+                    let spanValue = document.createElement('span');
+                        spanValue.classList.add('value');
+                        spanValue.innerText = `${e[1]}`;
+                        div.append(span)
+                        div.append(spanValue)
+                    let br = document.createElement('br');
+                        div.append(br)
+                }
+        });
+        return div
+    };
 
     function deleteUser(parent) {
         let liIndex;
@@ -177,10 +178,9 @@ addEventListener('DOMContentLoaded', () =>{
         }
         fetch(`https://jsonplaceholder.typicode.com/posts/${liIndex}`, {
             method: 'DELETE'
-        })
+        }).catch(() => console.log('Oooops! Somethig wrong'))
         parent.remove()
-    }
-
+    };
 
     addEventListener('click', function (event) {
         let editBtn = document.querySelectorAll('.icon_edit');
@@ -207,7 +207,6 @@ addEventListener('DOMContentLoaded', () =>{
                 }
             });
             
-            
             deleteBtn.forEach(e => {
                 if(event.target === e) {
                     deleteUser(e.parentNode)
@@ -220,9 +219,8 @@ addEventListener('DOMContentLoaded', () =>{
                     location.hash = `/comments/${id}`
                 }
             });
-    })
+    })};
 
-    };
     function comments (id) {
         document.querySelector('.list').querySelectorAll('.item').forEach(e => e.remove())
         document.querySelector('.loader').style.display = 'block';
@@ -232,10 +230,10 @@ addEventListener('DOMContentLoaded', () =>{
         function createItems (title, body) {
             let span = document.createElement('span');
             let block = `
-            <div class="comments__block">
-                <div class="block_title">${title}</div>
-                <div class="block_body">${body}</div>
-             </div>
+                <div class="comments__block">
+                    <div class="block_title">${title}</div>
+                    <div class="block_body">${body}</div>
+                </div>
             `;
             span.innerHTML = block;
             document.querySelector('.loader').style.display = 'none';
@@ -250,7 +248,7 @@ addEventListener('DOMContentLoaded', () =>{
           json.forEach((e) => {
             document.querySelector('.comments_title').after(createItems(e.title, e.body));
           })
-        })
+        }).catch(() => console.log('Oooops! Somethig wrong'))
 
         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
         .then(response => response.json())
@@ -258,13 +256,17 @@ addEventListener('DOMContentLoaded', () =>{
           json.forEach((e) => {
               document.querySelector('.posts_title').after(createItems(e.name, e.body));
           })
-        })
+        }).catch(() => console.log('Oooops! Somethig wrong'))
     }
 
     document.querySelector('#home').addEventListener('click', () => {
+        if (location.hash === '' || location.hash === '#') {
+            document.querySelector('.loader').style.display = 'none';
+        }else {
+            document.querySelector('.loader').style.display = 'block';
+        }
         location.hash = '';
-        document.querySelector('.loader').style.display = 'block';
         document.querySelector('.comments').style.display = 'none';
-
     });
+    
 });
