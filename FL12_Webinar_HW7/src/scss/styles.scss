@@ -1,0 +1,71 @@
+@import './variable.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $text;
+
+}
+body {
+    background-color: $background;
+    text-align: center;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+.player__score, .computer__score {
+    padding: 15px 50px;
+}
+
+img {
+    width: 200px;
+}
+
+button {
+    background-color: $button;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 0 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.intro {
+    margin: 25px auto;
+    text-align: center;
+
+    button {
+        margin-top: 15px;
+    }
+}
+
+.match {
+    display: none;
+    text-align: center;
+}
+
+.player_hand {
+    transform: rotateY(180deg);
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.reset {
+    display: none;
+    margin-top: 15px;
+    width: 100px;
+}
+
+.winner_result {
+    margin-top: 15px;
+}
