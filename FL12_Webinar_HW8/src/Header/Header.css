@@ -1,0 +1,11 @@
+.header {
+    padding: 0 10%;
+    min-height: 50px;
+    display: flex;
+    justify-content: start;
+    align-content: center;
+}
+.header__logo__title {
+    font-size: 20px;
+    align-self: center;
+}
