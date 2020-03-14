@@ -1,0 +1,9 @@
+<div class="panel">
+    <input autofocus type="search" [(ngModel)]="search">
+    <button (click)="addUser = true">Add new user</button>
+</div>
+
+<app-item *ngIf="addUser" (addUser)='addUser=$event'></app-item>
+<app-item *ngFor="let item of data | filter:search"
+    [item]="item"
+></app-item>

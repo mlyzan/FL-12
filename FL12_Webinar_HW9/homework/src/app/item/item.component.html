@@ -1,0 +1,29 @@
+<div *ngIf="!edit; else form" class="item">
+    <span>{{item.name}}</span>
+    <span>{{item.email}}</span>
+    <span>{{item.phone}}</span>
+    <div class="btn">
+        <button (click)="deleteItem(item.id)" >Delete</button>
+        <button (click)="edit = true">Edit</button>
+    </div>
+</div> 
+<ng-template #form>
+    <form class="item" [formGroup]="itemForm">
+        <input type="text"
+            formControlName="name"
+        >
+        <input type="email"
+            formControlName="email"
+        >
+        <input type="phone"
+            formControlName="phone"
+        >
+        <div>
+            <button
+                [disabled]="!itemForm.valid"
+                (click)="saveChanges()"
+            >Save</button>
+            <button (click)="discard()">Discard</button>
+        </div>
+    </form>
+</ng-template>
