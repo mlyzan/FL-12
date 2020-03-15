@@ -12,26 +12,7 @@ export interface Item {
 })
 
 export class AppService {
-  data: Item[] = [
-    {
-      id: 1,
-      name: 'Oleg',
-      email: 'oleg@mail.com',
-      phone: '3343434132'
-    },
-    {
-      id: 2,
-      name: 'Olena',
-      email: 'olena@mail.com',
-      phone: '2344465768890'
-    },
-    {
-      id: 3,
-      name: 'Vova',
-      email: 'karl@mail.com',
-      phone: '000-000-000'
-    }
-  ];
+  data: Item[] = [];
 
   getData() {
     return this.data

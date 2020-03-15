@@ -29,7 +29,7 @@ export class ItemComponent {
         this.itemForm = new FormGroup({
             name: new FormControl(name, Validators.required),
             email: new FormControl(email, [Validators.required, Validators.minLength(4), Validators.email]),
-            phone: new FormControl(phone, Validators.required)
+            phone: new FormControl(phone, [Validators.required, Validators.pattern('[0-9-,x ()]*')])
         })
     };
 
