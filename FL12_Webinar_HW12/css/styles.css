@@ -1,0 +1,21 @@
+body {
+    padding: 50px;
+}
+h1 {
+    text-align: center;
+}
+li {
+    margin-left: 15px;
+}
+ul {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    border-right: 4px solid black;
+}
+span {
+    font-weight: bold;
+}
+.rm {
+    font-size: 24px;
+}
