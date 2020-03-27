@@ -1,0 +1,31 @@
+.x:after,
+.x:before {
+content: '';
+position: absolute;
+width: 10px;
+height: 80px;
+background-color: black;
+}
+.x:before {
+content: '';
+transform: rotate(45deg);
+}
+.x:after {
+content: '';
+transform: rotate(-45deg);
+}
+.o:before, .o:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.o:before {
+width: 80px;
+height: 80px;
+background-color: black;
+}
+.o:after {
+width: 60px;
+height: 60px;
+background-color: #fff;
+}

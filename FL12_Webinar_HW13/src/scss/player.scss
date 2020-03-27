@@ -1,0 +1,28 @@
+.player_turn {
+    display: flex;
+    justify-content: center;
+    .playerX,
+    .playerO {
+      font-weight: bold;
+      padding: 10px;
+      margin: 25px;
+    }
+  }
+  .result {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    .playerX-wins, .playerO-wins {
+      margin: 15px 25px;
+    }
+  }
+  .turn {
+   color: green;
+  }
+  .winner {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+  }
+  
